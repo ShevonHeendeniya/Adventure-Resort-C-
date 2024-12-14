@@ -1,32 +1,47 @@
-# Prerequisites
-*.d
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
 
-# Precompiled Headers
-*.gch
-*.pch
+#include <iostream>
+using namespace std;
+int main()
+{
+    int packageType;
+    int numberofPeople;
+    int costperPerson;
+    int totalCost;
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+    cout << "Adventure Resort"<<endl;
+    cout << "--------------------------------" << endl;
+    cout << "Available Packages:" << endl;
+    cout << "1.Horse riding" << endl;
+    cout << "2.Scuba Diving" << endl;
+    cout << "3.Water Rafting" << endl;
 
-# Fortran module files
-*.mod
-*.smod
+    cout << "Enter Package type (1-3):";
+    cin >> packageType;
+    cout << "Enter the Number of people:";
+    cin >> numberofPeople;
+    
+    if (packageType == 1) {
+        costperPerson = 2000;
+    }
+    else if (packageType == 2) {
+        costperPerson = 5000;
+    }
+    else if (packageType == 3) {
+        costperPerson = 7000;
+    }
+    else {
+        cout << "Invalid Package Type Selected"<<endl;
+        return 1;
+    }
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+    totalCost = numberofPeople * costperPerson;
 
-# Executables
-*.exe
-*.out
-*.app
+
+    cout << "The total cost for package type " << packageType << " for "
+        << numberofPeople << "people is" << totalCost << "/=" <<
+        endl;
+    return 0;
+    
+}
+
